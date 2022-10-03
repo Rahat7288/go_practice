@@ -1,19 +1,29 @@
 package main
 
-import "log"
+import (
+	"log"
+	"time"
+)
 
-func main(){
-	var name string
-	name = "Rahat"
-	log.Println("may name is ", name)
+//learning the type and struct in go
+/*
+if we have to store to many variables for any perticuler purpose then we can use type or struct
+*/
 
-	changeName(&name)
-	log.Println("after the function call name is", name)
+type User struct {
+	FirstName   string
+	LastName    string
+	PhoneNumber string
+	Age         int
+	BrithDate   time.Time
 }
 
-func changeName(s *string){
-	newName := "akash"
-	*s = newName
+func main() {
+	user := User{
 
+		FirstName: "rahat",
+		LastName:  "Akash",
+	}
 
+	log.Println(user.FirstName, user.LastName)
 }
