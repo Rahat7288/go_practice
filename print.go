@@ -1,29 +1,33 @@
 package main
 
-import (
-	"log"
-	"time"
-)
-
-//learning the type and struct in go
-/*
-if we have to store to many variables for any perticuler purpose then we can use type or struct
-*/
+import "log"
 
 type User struct {
-	FirstName   string
-	LastName    string
-	PhoneNumber string
-	Age         int
-	BrithDate   time.Time
+	FirstName string
+	LastName  string
 }
 
 func main() {
-	user := User{
+	/*
+	*map[key inside this field] value of this key/return type
+	 */
 
-		FirstName: "rahat",
+	myMap := make(map[string]string)
+
+	myMap["cat"] = "Pande??"
+
+	log.Println(myMap["cat"])
+
+	//map using the struc type
+
+	myMap2 := make(map[string]User)
+
+	me := User{
+		FirstName: "Rahat",
 		LastName:  "Akash",
 	}
+	myMap2["me"] = me
 
-	log.Println(user.FirstName, user.LastName)
+	log.Println(myMap2["me"].FirstName)
+
 }
