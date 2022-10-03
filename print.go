@@ -2,32 +2,25 @@ package main
 
 import "log"
 
-type User struct {
+/*
+*in go we use slices is more like  array
+ */
+
+ type Use struct{
 	FirstName string
 	LastName  string
-}
-
+ }
 func main() {
-	/*
-	*map[key inside this field] value of this key/return type
-	 */
+	var mySlice []string
+	var sliceNumber []int
 
-	myMap := make(map[string]string)
+	
 
-	myMap["cat"] = "Pande??"
+	mySlice = append(mySlice, "Rahat")
+	mySlice = append(mySlice, "Akash")
 
-	log.Println(myMap["cat"])
+	sliceNumber = append(sliceNumber, 10)
 
-	//map using the struc type
-
-	myMap2 := make(map[string]User)
-
-	me := User{
-		FirstName: "Rahat",
-		LastName:  "Akash",
-	}
-	myMap2["me"] = me
-
-	log.Println(myMap2["me"].FirstName)
+	log.Println(mySlice, sliceNumber)
 
 }
