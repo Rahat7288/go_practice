@@ -1,29 +1,32 @@
 package main
 
-import (
-	"log"
-	"time"
-)
+import "log"
 
-//learning the type and struct in go
 /*
-if we have to store to many variables for any perticuler purpose then we can use type or struct
-*/
+*myStruct has a function associated with it
+ */
+type myStruct struct {
+	FirstName string
+}
 
-type User struct {
-	FirstName   string
-	LastName    string
-	PhoneNumber string
-	Age         int
-	BrithDate   time.Time
+/*
+*here we have diclear a function which can access my type struct
+* and return a string value
+ */
+func (m *myStruct) printFirstName() string {
+	return m.FirstName
 }
 
 func main() {
-	user := User{
 
-		FirstName: "rahat",
-		LastName:  "Akash",
+	var myVar myStruct
+	myVar.FirstName = "rahat"
+
+	myVar2 := myStruct{
+		FirstName: "Akash",
 	}
 
-	log.Println(user.FirstName, user.LastName)
+	log.Println("myVar is set to ", myVar.printFirstName())
+	log.Println("myVar is set to ", myVar2.printFirstName())
+
 }
